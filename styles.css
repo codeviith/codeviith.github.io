@@ -38,6 +38,19 @@ a:hover {
     text-decoration: underline;
 }
 
+
+
+
+.position {
+    font-size: large;
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
 #testimonials {
     padding: 2rem;
     background-color: #f9f9f9;
@@ -48,4 +61,18 @@ a:hover {
     padding-left: 1rem;
     margin-bottom: 1rem;
     font-style: italic;
+}
+
+.gallery {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
