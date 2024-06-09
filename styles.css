@@ -37,3 +37,15 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+#testimonials {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.testimonial {
+    border-left: 4px solid #333;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
