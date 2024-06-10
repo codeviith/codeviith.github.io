@@ -46,9 +46,14 @@ a:hover {
 }
 
 .profile-photo {
-    width: 30%;
+    width: 150px;
     height: auto;
     margin-top: 1rem;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #333;
 }
 
 #testimonials {
