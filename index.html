@@ -285,7 +285,7 @@
 
     <!-- JavaScript for Lightbox -->
     <script>
-                let currentImageIndex = 0;
+        let currentImageIndex = 0;
         const images = [
             'pictures/DIYeSk8Guide - Home.png',
             'pictures/DIYeSk8Guide - About.png',
@@ -314,18 +314,17 @@
             document.getElementById('lightbox-img').src = images[currentImageIndex];
         }
 
-        document.querySelectorAll('.gallery a').forEach(anchor => {
-            anchor.addEventListener('click', function (event) {
+        document.querySelectorAll('.gallery a').forEach((link, index) => {
+            link.addEventListener('click', (event) => {
                 event.preventDefault();
-                const target = this.getAttribute('data-target');
-                document.getElementById(target).style.display = 'block';
+                showLightbox(index);
             });
         });
 
-        document.querySelectorAll('.close').forEach(close => {
-            close.addEventListener('click', function (event) {
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', (event) => {
                 event.preventDefault();
-                this.closest('.lightbox').style.display = 'none';
+                event.target.closest('.lightbox').style.display = 'none';
             });
         });
 
