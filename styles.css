@@ -162,3 +162,8 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* prevent scrolling while inside lightbox */
+.no-scroll {
+    overflow: hidden;
+}
+

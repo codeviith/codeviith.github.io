@@ -183,6 +183,7 @@
             currentImageIndex = index;
             const lightbox = document.getElementById('lightbox');
             lightbox.style.display = 'block';
+            document.body.classList.add('no-scroll'); // Code to disable scrolling while inside lightbox
             document.getElementById('lightbox-img').src = images[index];
         }
 
@@ -206,16 +207,16 @@
         document.querySelectorAll('.close').forEach(closeBtn => {
             closeBtn.addEventListener('click', (event) => {
                 event.preventDefault();
-                event.target.closest('.lightbox').style.display = 'none';
+                document.getElementById('lightbox').style.display = 'none';
+                document.body.classList.remove('no-scroll'); // Code to re-enable scrolling after closing lightbox
             });
         });
 
         // close lightbox w. esc key
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
-                document.querySelectorAll('.lightbox').forEach(lightbox => {
-                    lightbox.style.display = 'none';
-                });
+                document.getElementById('lightbox').style.display = 'none';
+                document.body.classList.remove('no-scroll'); // Code to re-enable scrolling after closing lightbox
             }
         });
 
