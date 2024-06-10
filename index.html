@@ -75,12 +75,12 @@
                 world of electric skateboarding.
             </p>
             <div class="gallery">
-                <a href="#img1"><img src="pictures/DIYeSk8Guide - Home.png" alt="Home"></a>
-                <a href="#img2"><img src="pictures/DIYeSk8Guide - About.png" alt="About"></a>
-                <a href="#img3"><img src="pictures/DIYeSk8Guide - Guide.png" alt="Guide"></a>
-                <a href="#img4"><img src="pictures/DIYeSk8Guide - Generate.png" alt="Generate"></a>
-                <a href="#img5"><img src="pictures/DIYeSk8Guide - Guru.png" alt="Guru"></a>
-                <a href="#img6"><img src="pictures/DIYeSk8Guide - Gallery.png" alt="Gallery"></a>
+                <a href="#" data-target="img1"><img src="pictures/DIYeSk8Guide - Home.png" alt="Home"></a>
+                <a href="#" data-target="img2"><img src="pictures/DIYeSk8Guide - About.png" alt="About"></a>
+                <a href="#" data-target="img3"><img src="pictures/DIYeSk8Guide - Guide.png" alt="Guide"></a>
+                <a href="#" data-target="img4"><img src="pictures/DIYeSk8Guide - Generate.png" alt="Generate"></a>
+                <a href="#" data-target="img5"><img src="pictures/DIYeSk8Guide - Guru.png" alt="Guru"></a>
+                <a href="#" data-target="img6"><img src="pictures/DIYeSk8Guide - Gallery.png" alt="Gallery"></a>
             </div>
             <p><a href="https://diyesk8guide.com">Explore the Application</a></p>
             <p><a href="https://github.com/codeviith/capstone-project-diyesk8guide">View on GitHub</a></p>
@@ -107,9 +107,9 @@
                 community.
             </p>
             <div class="gallery">
-                <!-- <a href="#img7"><img src="relative path to image1.jpg" alt="Screenshot of Esk8Gather"></a> -->
-                <!-- <a href="#img8"><img src="relative path to image2.jpg" alt="Screenshot of Esk8Gather"></a> -->
-                <!-- <a href="#img9"><img src="relative path to image3.jpg" alt="Screenshot of Esk8Gather"></a> -->
+                <!-- <a href="#" data-target="img7"><img src="relative path to image1.jpg" alt="Screenshot of Esk8Gather"></a> -->
+                <!-- <a href="#" data-target="img8"><img src="relative path to image2.jpg" alt="Screenshot of Esk8Gather"></a> -->
+                <!-- <a href="#" data-target="img9"><img src="relative path to image3.jpg" alt="Screenshot of Esk8Gather"></a> -->
             </div>
             <!-- <a href="github url link to project">View on GitHub</a> -->
         </div>
@@ -156,95 +156,59 @@
         <p>Github: <a href="https://github.com/codeviith/">Github</a></p>
         <p>Blog: <a href="https://hashnode.com/@codeviith">Blog</a></p>
     </section>
+
     <!-- HTML Code for Lightbox  -->
     <div id="img1" class="lightbox">
         <a href="#" class="close">&times;</a>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
         <div class="lightbox-content">
-            <img src="pictures/DIYeSk8Guide - Home.png" alt="Home" id="lightbox-img">
+            <img src="pictures/DIYeSk8Guide - Home.png" alt="Home">
         </div>
     </div>
     <div id="img2" class="lightbox">
         <a href="#" class="close">&times;</a>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
         <div class="lightbox-content">
-            <img src="pictures/DIYeSk8Guide - About.png" alt="About" id="lightbox-img">
+            <img src="pictures/DIYeSk8Guide - About.png" alt="About">
         </div>
     </div>
     <div id="img3" class="lightbox">
         <a href="#" class="close">&times;</a>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
         <div class="lightbox-content">
-            <img src="pictures/DIYeSk8Guide - Guide.png" alt="Guide" id="lightbox-img">
+            <img src="pictures/DIYeSk8Guide - Guide.png" alt="Guide">
         </div>
     </div>
     <div id="img4" class="lightbox">
         <a href="#" class="close">&times;</a>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
         <div class="lightbox-content">
-            <img src="pictures/DIYeSk8Guide - Generate.png" alt="Generate" id="lightbox-img">
+            <img src="pictures/DIYeSk8Guide - Generate.png" alt="Generate">
         </div>
     </div>
     <div id="img5" class="lightbox">
-        <a href="#" class="close">&times;"></a>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
+        <a href="#" class="close">&times;</a>
         <div class="lightbox-content">
-            <img src="pictures/DIYeSk8Guide - Guru.png" alt="Guru" id="lightbox-img">
+            <img src="pictures/DIYeSk8Guide - Guru.png" alt="Guru">
         </div>
     </div>
     <div id="img6" class="lightbox">
-        <a href="#" class="close">&times;"></a>
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
+        <a href="#" class="close">&times;</a>
         <div class="lightbox-content">
-            <img src="pictures/DIYeSk8Guide - Gallery.png" alt="Gallery" id="lightbox-img">
+            <img src="pictures/DIYeSk8Guide - Gallery.png" alt="Gallery">
         </div>
     </div>
 
+    <!-- JavaScript for Lightbox -->
     <script>
-        let currentImageIndex = 0;
-        const images = [
-            'pictures/DIYeSk8Guide - Home.png',
-            'pictures/DIYeSk8Guide - About.png',
-            'pictures/DIYeSk8Guide - Guide.png',
-            'pictures/DIYeSk8Guide - Generate.png',
-            'pictures/DIYeSk8Guide - Guru.png',
-            'pictures/DIYeSk8Guide - Gallery.png'
-        ];
-
-        function showLightbox(index) {
-            currentImageIndex = index;
-            const lightbox = document.querySelectorAll('.lightbox')[index];
-            lightbox.style.display = 'block';
-            document.getElementById('lightbox-img').src = images[index];
-        }
-
-        function changeImage(direction) {
-            currentImageIndex += direction;
-            if (currentImageIndex < 0) {
-                currentImageIndex = images.length - 1;
-            } else if (currentImageIndex >= images.length) {
-                currentImageIndex = 0;
-            }
-            document.getElementById('lightbox-img').src = images[currentImageIndex];
-        }
-
-        document.querySelectorAll('.gallery a').forEach((link, index) => {
-            link.addEventListener('click', (event) => {
+        document.querySelectorAll('.gallery a').forEach(anchor => {
+            anchor.addEventListener('click', function (event) {
                 event.preventDefault();
-                showLightbox(index);
+                const target = this.getAttribute('data-target');
+                document.getElementById(target).style.display = 'block';
             });
         });
 
-        document.querySelectorAll('.lightbox .close').forEach(closeBtn => {
-            closeBtn.addEventListener('click', (event) => {
+        document.querySelectorAll('.close').forEach(close => {
+            close.addEventListener('click', function (event) {
                 event.preventDefault();
-                event.target.closest('.lightbox').style.display = 'none';
+                this.closest('.lightbox').style.display = 'none';
             });
         });
     </script>
