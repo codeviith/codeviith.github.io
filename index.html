@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Lin's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -154,26 +155,33 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <ul>
-            <li>
-                <p>Location: New York, willing to relocate</p>
-            </li>
-            <li>
-                <p>Phone: (562) 881-9558</p>
-            </li>
-            <li>
-                <p>Email: <a href="mailto:kclin128@gmail.com">kclin128@gmail.com</a></p>
-            </li>
-            <li>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/kevinlin128/">LinkedIn</a></p>
-            </li>
-            <li>
-                <p>Github: <a href="https://github.com/codeviith/">Github</a></p>
-            </li>
-            <li>
-                <p>Blog: <a href="https://hashnode.com/@codeviith">Blog</a></p>
-            </li>
-        </ul>
+        <form id="contactForm" onsubmit="return showContactInfo()">
+            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+            <br>
+            <button type="submit" class="button">Verify to See Contact Info</button>
+        </form>
+        <div id="contactInfo" style="display:none;">
+            <ul>
+                <li>
+                    <p>Location: New York, willing to relocate</p>
+                </li>
+                <li>
+                    <p>Phone: (xxx) xxx-xxxx</p>
+                </li>
+                <li>
+                    <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+                </li>
+                <li>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/kevinlin128/">LinkedIn</a></p>
+                </li>
+                <li>
+                    <p>Github: <a href="https://github.com/codeviith/">Github</a></p>
+                </li>
+                <li>
+                    <p>Blog: <a href="https://hashnode.com/@codeviith">Blog</a></p>
+                </li>
+            </ul>
+        </div>
 
     </section>
 
@@ -255,6 +263,23 @@
                 changeImage(-1);
             }
         });
+
+
+        // reCAPTCHA code for contact section
+        function showContactInfo() {
+            event.preventDefault();
+
+            var response = grecaptcha.getResponse();  // Code to get reCAPTCHA response
+
+            if (response.length == 0) {  // Code to check if reCAPTCHA is verified
+                alert("Please verify that you are not a robot.");
+                return false;
+            } else {     // Code to show contact information
+                document.getElementById('contactInfo').style.display = 'block';
+                document.getElementById('contactForm').style.display = 'none';
+                return true;
+            }
+        }
     </script>
 </body>
 
