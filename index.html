@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Lin's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfn4vUpAAAAAIOJ7R38ZNURNyHPflg8QrfflRW4"></script>
+
+    <!-- reCAPTCHA v2 -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </head>
 
 <body>
@@ -155,11 +160,21 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <form id="contactForm" onsubmit="return showContactInfo()">
-            <div class="g-recaptcha" data-sitekey="6Ld94PUpAAAAAFU90BmMeVdJvF4vCxlCDL59AHzv"></div>
-            <br>
+        <!-- reCAPTCHA v2 -->
+        <!-- 
+            <form id="contactForm" onsubmit="return showContactInfo()">
+                <div class="g-recaptcha" data-sitekey="6Lfh4vUpAAAAAMI2Qq5ompdWU6AUDN4V4m7psohc"></div>
+                <br>
+                <button type="submit" class="button">Verify to See Contact Info</button>
+            </form> 
+        -->
+
+        <!-- reCAPTCHA v3 -->
+        <form id="contactForm" onsubmit="return handleFormSubmit(event)">
+            <input type="hidden" name="recaptcha_token" id="recaptcha_token">
             <button type="submit" class="button">Verify to See Contact Info</button>
         </form>
+
         <div id="contactInfo" style="display:none;">
             <ul>
                 <li>
@@ -196,9 +211,12 @@
         </div>
     </div>
 
-    <!-- JavaScript for Lightbox -->
+    <!-- JavaScript -->
     <script>
+        ///////////// Lightbox code for project gallery  /////////////
+
         let currentImageIndex = 0;
+
         const images = [
             'pictures/DIYeSk8Guide - Home.png',
             'pictures/DIYeSk8Guide - About.png',
@@ -247,16 +265,14 @@
             });
         });
 
-        // close lightbox w. esc key
-        document.addEventListener('keydown', function (event) {
+        document.addEventListener('keydown', function (event) {  // close lightbox w. esc key
             if (event.key === 'Escape') {
                 document.getElementById('lightbox').style.display = 'none';
                 document.body.classList.remove('no-scroll'); // Code to re-enable scrolling after closing lightbox
             }
         });
 
-        // navigate lightbox w. arrow keys
-        document.addEventListener('keydown', function (event) {
+        document.addEventListener('keydown', function (event) {  // navigate lightbox w. arrow keys
             if (event.key === 'ArrowRight' && currentImageIndex < images.length - 1) {
                 changeImage(1);
             } else if (event.key === 'ArrowLeft' && currentImageIndex > 0) {
@@ -265,20 +281,37 @@
         });
 
 
-        // reCAPTCHA code for contact section
-        function showContactInfo() {
+        ///////////// reCAPTCHA code for contact section  /////////////
+
+        ////// reCAPTCHA v2  //////
+        // function showContactInfo() {
+        //     event.preventDefault();
+
+        //     var response = grecaptcha.getResponse();  // Code to get reCAPTCHA response
+
+        //     if (response.length == 0) {  // Code to check if reCAPTCHA is verified
+        //         alert("Please verify that you are not a robot.");
+        //         return false;
+        //     } else {     // Code to show contact information
+        //         document.getElementById('contactInfo').style.display = 'block';
+        //         document.getElementById('contactForm').style.display = 'none';
+        //         return true;
+        //     }
+        // }
+
+        ////// reCAPTCHA v3  //////
+        function handleFormSubmit(event) {
             event.preventDefault();
+            grecaptcha.ready(function () {
+                grecaptcha.execute('6Lfn4vUpAAAAAIOJ7R38ZNURNyHPflg8QrfflRW4', { action: 'submit' }).then(function (token) {
+                    // Code to add token
+                    document.getElementById('recaptcha_token').value = token;
 
-            var response = grecaptcha.getResponse();  // Code to get reCAPTCHA response
-
-            if (response.length == 0) {  // Code to check if reCAPTCHA is verified
-                alert("Please verify that you are not a robot.");
-                return false;
-            } else {     // Code to show contact information
-                document.getElementById('contactInfo').style.display = 'block';
-                document.getElementById('contactForm').style.display = 'none';
-                return true;
-            }
+                    // Code to show contact information
+                    document.getElementById('contactInfo').style.display = 'block';
+                    document.getElementById('contactForm').style.display = 'none';
+                });
+            });
         }
     </script>
 </body>
