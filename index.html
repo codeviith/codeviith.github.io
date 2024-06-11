@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin Lin's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lfn4vUpAAAAAIOJ7R38ZNURNyHPflg8QrfflRW4"></script>
-
+    
     <!-- reCAPTCHA v2 -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+    <!-- reCAPTCHA v3 -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js?render=6Lfn4vUpAAAAAIOJ7R38ZNURNyHPflg8QrfflRW4"></script> -->
 </head>
 
 <body>
@@ -161,19 +161,18 @@
     <section id="contact">
         <h2>Contact</h2>
         <!-- reCAPTCHA v2 -->
-        <!-- 
-            <form id="contactForm" onsubmit="return showContactInfo()">
-                <div class="g-recaptcha" data-sitekey="6Lfh4vUpAAAAAMI2Qq5ompdWU6AUDN4V4m7psohc"></div>
-                <br>
-                <button type="submit" class="button">Verify to See Contact Info</button>
-            </form> 
-        -->
-
-        <!-- reCAPTCHA v3 -->
-        <form id="contactForm" onsubmit="return handleFormSubmit(event)">
-            <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+        <form id="contactForm" onsubmit="return showContactInfo()">
+            <div class="g-recaptcha" data-sitekey="6Lfh4vUpAAAAAMI2Qq5ompdWU6AUDN4V4m7psohc"></div>
+            <br>
             <button type="submit" class="button">Verify to See Contact Info</button>
         </form>
+
+
+        <!-- reCAPTCHA v3 -->
+        <!-- <form id="contactForm" onsubmit="return handleFormSubmit(event)">
+            <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+            <button type="submit" class="button">Verify to See Contact Info</button>
+        </form> -->
 
         <div id="contactInfo" style="display:none;">
             <ul>
@@ -284,35 +283,35 @@
         ///////////// reCAPTCHA code for contact section  /////////////
 
         ////// reCAPTCHA v2  //////
-        // function showContactInfo() {
-        //     event.preventDefault();
+        function showContactInfo() {
+            event.preventDefault();
 
-        //     var response = grecaptcha.getResponse();  // Code to get reCAPTCHA response
+            var response = grecaptcha.getResponse();  // Code to get reCAPTCHA response
 
-        //     if (response.length == 0) {  // Code to check if reCAPTCHA is verified
-        //         alert("Please verify that you are not a robot.");
-        //         return false;
-        //     } else {     // Code to show contact information
-        //         document.getElementById('contactInfo').style.display = 'block';
-        //         document.getElementById('contactForm').style.display = 'none';
-        //         return true;
-        //     }
-        // }
+            if (response.length == 0) {  // Code to check if reCAPTCHA is verified
+                alert("Please verify that you are not a robot.");
+                return false;
+            } else {     // Code to show contact information
+                document.getElementById('contactInfo').style.display = 'block';
+                document.getElementById('contactForm').style.display = 'none';
+                return true;
+            }
+        }
 
         ////// reCAPTCHA v3  //////
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            grecaptcha.ready(function () {
-                grecaptcha.execute('6Lfn4vUpAAAAAIOJ7R38ZNURNyHPflg8QrfflRW4', { action: 'submit' }).then(function (token) {
-                    // Code to add token
-                    document.getElementById('recaptcha_token').value = token;
+        // function handleFormSubmit(event) {
+        //     event.preventDefault();
+        //     grecaptcha.ready(function () {
+        //         grecaptcha.execute('6Lfn4vUpAAAAAIOJ7R38ZNURNyHPflg8QrfflRW4', { action: 'submit' }).then(function (token) {
+        //             // Code to add token
+        //             document.getElementById('recaptcha_token').value = token;
 
-                    // Code to show contact information
-                    document.getElementById('contactInfo').style.display = 'block';
-                    document.getElementById('contactForm').style.display = 'none';
-                });
-            });
-        }
+        //             // Code to show contact information
+        //             document.getElementById('contactInfo').style.display = 'block';
+        //             document.getElementById('contactForm').style.display = 'none';
+        //         });
+        //     });
+        // }
     </script>
 </body>
 
