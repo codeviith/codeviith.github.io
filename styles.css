@@ -84,9 +84,19 @@ a:hover {
 
 
 
-/* justify text for about section */
+/* justify text for about and projects section */
 #about p {
     text-align: justify;
+}
+
+#projects p {
+    text-align: justify;
+}
+
+
+/* color for hRef links */
+#contact a {
+    color: aqua;
 }
 
 
