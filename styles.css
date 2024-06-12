@@ -228,14 +228,14 @@ a:hover {
 }
 
 /* animation */
-.progress-bar .progress {
+/* .progress-bar .progress {
     animation: loadProgress 2s forwards;
 }
 
 @keyframes loadProgress {
     from { width: 0; }
     to { width: var(--width); }
-}
+} */
 
 .skill p {
     margin: 0;
