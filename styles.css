@@ -251,3 +251,10 @@ a:hover {
     vertical-align: middle;
     height: 24px;
 }
+
+.dark-background-github-chart {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block; /* this code ensure that the dark background wraps around the image tightly */
+}
