@@ -266,7 +266,9 @@ a:hover {
     padding: 20px;
 }
 
-.dark-background-github-chart, .github-streak-container {
+.dark-background-github-chart,
+.github-streak-container,
+.github-stats-container {
     display: flex;
     justify-content: center;
     align-items: center;
