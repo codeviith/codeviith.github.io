@@ -4,7 +4,8 @@ Welcome to my professional portfolio website! This repository contains the sourc
 
 ## Live Demo
 
-You can visit my portfolio [here](https://codeviith.github.io/).
+You can visit my portfolio <a href="https://codeviith.github.io/" target="_blank">here</a>.
+<!-- You can visit my portfolio [here](https://codeviith.github.io/). -->
 
 ## Table of Contents
 
