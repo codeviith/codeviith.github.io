@@ -213,19 +213,32 @@ a:hover {
 }
 
 .progress-bar {
-    background-color: #aaaaaa;
-    border-radius: 5px;
+    background-color: #333;
+    border-radius: 20px;
     overflow: hidden;
-    position: relative;
-    height: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
 }
 
 .progress {
-    background-color: #016e19;
-    height: 100%;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
-    line-height: 20px;
-    transition: width 0.5s ease-in-out;
+    height: 20px;
+    background: linear-gradient(to right, red 0%, orange 25%, yellow 50%, lightgreen 75%, rgb(1, 138, 1) 100%);
+    width: 0;
+    border-radius: 20px;
+    transition: width 1s ease-in-out;
+}
+
+/* animation */
+.progress-bar .progress {
+    animation: loadProgress 2s forwards;
+}
+
+@keyframes loadProgress {
+    from { width: 0; }
+    to { width: var(--width); }
+}
+
+.skill p {
+    margin: 0;
+    font-weight: bold;
 }
