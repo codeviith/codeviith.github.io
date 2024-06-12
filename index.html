@@ -60,48 +60,47 @@
         <div class="skill">
             <p>JavaScript</p>
             <div class="progress-bar">
-                <div class="progress" style="width: 87%;"></div>
+                <div class="progress" data-width="87"></div>
             </div>
         </div>
         <div class="skill">
             <p>React.js</p>
             <div class="progress-bar">
-                <div class="progress" style="--width: 78%;"></div>
+                <div class="progress" data-width="78"></div>
             </div>
         </div>
         <div class="skill">
             <p>Node.js</p>
             <div class="progress-bar">
-                <div class="progress" style="--width: 73%;"></div>
+                <div class="progress" data-width="73"></div>
             </div>
         </div>
         <div class="skill">
             <p>HTML/CSS</p>
             <div class="progress-bar">
-                <div class="progress" style="--width: 93%;"></div>
+                <div class="progress" data-width="93"></div>
             </div>
         </div>
         <div class="skill">
             <p>Python</p>
             <div class="progress-bar">
-                <div class="progress" style="--width: 82%;"></div>
+                <div class="progress" data-width="82"></div>
             </div>
         </div>
         <div class="skill">
             <p>Flask</p>
             <div class="progress-bar">
-                <div class="progress" style="--width: 76%;"></div>
+                <div class="progress" data-width="76"></div>
             </div>
         </div>
         <div class="skill">
             <p>Java</p>
             <div class="progress-bar">
-                <div class="progress" style="--width: 65%;"></div>
+                <div class="progress" data-width="65"></div>
             </div>
         </div>
         <!-- Add more skills as needed -->
     </section>
-
 
     <section id="projects">
         <h2>Projects</h2>
@@ -369,6 +368,28 @@
         //         });
         //     });
         // }
+
+
+        /////////////  Progress bar code  /////////////
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.progress');
+
+            progressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+
+                if (width <= 25) {
+                    bar.style.backgroundColor = 'red';
+                } else if (width <= 50) {
+                    bar.style.backgroundColor = 'orange';
+                } else if (width <= 75) {
+                    bar.style.backgroundColor = 'yellowgreen';
+                } else {
+                    bar.style.backgroundColor = 'green';
+                }
+            });
+        });
     </script>
 </body>
 
