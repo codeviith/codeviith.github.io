@@ -38,9 +38,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
-
 .position {
     font-size: large;
 }
@@ -53,7 +50,7 @@ a:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #333;
+    border: 2px solid #0223fb;  /* testing profile photo border color */
 }
 
 #testimonials {
@@ -230,4 +227,27 @@ a:hover {
 .skill p {
     margin: 0;
     font-weight: bold;
+}
+
+
+
+/* github contributions and certification badges */
+
+#github-contributions {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+#github-contributions img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+#certifications img {
+    margin-left: 10px;
+    vertical-align: middle;
+    height: 24px;
 }
