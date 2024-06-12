@@ -277,3 +277,22 @@ a:hover {
     border-radius: 10px;
 }
 
+
+/* hobbies */
+
+.sub-header {
+    font-weight: bold;
+    margin-top: 10px;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    margin-left: -20px;
+}
+
+#hobbies ul {
+    padding-left: 20px;
+}
+
+#hobbies ul li {
+    margin: 5px 0;
+}
