@@ -233,10 +233,10 @@ a:hover {
 
 /* github contributions and certification badges */
 
-#github-contributions {
+/* #github-contributions {
     padding: 1rem 2rem;
-    /* text-align: center; */
-}
+    text-align: center;
+} */
 
 #github-contributions img {
     max-width: 100%;
