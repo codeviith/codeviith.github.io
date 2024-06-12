@@ -282,8 +282,9 @@ a:hover {
 
 .sub-header {
     font-weight: bold;
+    font-size: 18px;
     margin-top: 10px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     text-decoration: underline;
     margin-left: -20px;
 }
