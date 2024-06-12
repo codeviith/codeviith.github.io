@@ -232,10 +232,10 @@ a:hover {
     animation: loadProgress 3s forwards;
 }
 
-@keyframes loadProgress {
+/* @keyframes loadProgress {
     from { width: 0; }
     to { width: var(--width); }
-}
+} */
 
 .skill p {
     margin: 0;
