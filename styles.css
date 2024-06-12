@@ -235,7 +235,7 @@ a:hover {
 
 #github-contributions {
     padding: 1rem 2rem;
-    text-align: center;
+    /* text-align: center; */
 }
 
 #github-contributions img {
@@ -266,7 +266,7 @@ a:hover {
     padding: 20px;
 }
 
-.dark-background-github-chart, .github-streak-stats {
+.dark-background-github-chart, .github-streak-container {
     display: flex;
     justify-content: center;
     align-items: center;
