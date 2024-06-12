@@ -224,18 +224,18 @@ a:hover {
     height: 20px;
     width: 0;
     border-radius: 20px;
-    transition: width 1s ease-in-out;
+    transition: width 3s ease-in-out;
 }
 
 /* animation */
-/* .progress-bar .progress {
-    animation: loadProgress 2s forwards;
+.progress-bar .progress {
+    animation: loadProgress 3s forwards;
 }
 
 @keyframes loadProgress {
     from { width: 0; }
     to { width: var(--width); }
-} */
+}
 
 .skill p {
     margin: 0;
