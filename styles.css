@@ -258,3 +258,20 @@ a:hover {
     border-radius: 10px;
     display: inline-block; /* this code ensure that the dark background wraps around the image tightly */
 }
+
+.github-contributions-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.dark-background-github-chart, .github-streak-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
