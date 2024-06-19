@@ -44,7 +44,7 @@ For this portfolio:
 - **Frontend**: HTML, CSS, JavaScript
 - **Deployment**: GitHub Pages
 
-For all my projects:
+For my projects:
 
 - **Frontend**: JavaScript, React.js, React-Native.js, Redux.js, Tailwind, HTML/CSS
 - **Backend**: Node.js, Python, Flask
