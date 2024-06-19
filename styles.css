@@ -296,3 +296,37 @@ a:hover {
 #hobbies ul li {
     margin: 5px 0;
 }
+
+
+
+/* CSS for animations */
+
+/* fade in and out of view with each scroll */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+/* hover effects */
+.button:hover {
+    background-color: #555;
+    transform: scale (1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+/* smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
