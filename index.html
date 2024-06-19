@@ -177,7 +177,7 @@
         <!-- Add more projects as needed -->
     </section>
 
-    <section id="certifications">
+    <section id="certifications" class="fade-in">
         <h2>Education and Certifications</h2>
         <li>
             Full Stack Software Engineering Certificate, Flatiron School (December 2023)
@@ -201,7 +201,7 @@
         </ul>
     </section> -->
 
-    <section id="github-contributions">
+    <section id="github-contributions" class="fade-in">
         <h2>GitHub Contributions</h2>
         <div class="github-contributions-container">
             <div class="dark-background-github-chart">
@@ -218,7 +218,7 @@
         </div>
     </section>
 
-    <section id="testimonials">
+    <section id="testimonials" class="fade-in">
         <h2>Recommendations & Testimonials</h2>
         <div class="testimonial">
             <!-- <p>"Testimonials goes here." - Jane Doe, Project Manager</p> -->
@@ -249,7 +249,7 @@
         <!-- Add more recommendations as needed -->
     </section>
 
-    <section id="hobbies">
+    <section id="hobbies" class="fade-in">
         <h2>Sports & Hobbies</h2>
         <ul>
             <span class="sub-header">Sports</span>
@@ -454,11 +454,10 @@
 
             const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
                 entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
+                    if (entry.isIntersecting) {
                         entry.target.classList.add('show');
-                        appearOnScroll.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.remove('show');
                     }
                 });
             }, appearOptions);
