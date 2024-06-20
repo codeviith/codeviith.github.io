@@ -218,11 +218,17 @@ a:hover {
 }
 
 .progress {
+    position: relative;
     height: 20px;
-    width: 0;
+    /* width: 0; */
     border-radius: 20px;
     transition: width 3s ease-in-out;
 }
+
+.progress:hover {
+    transform: scale(1.1);
+}
+
 
 .skill p {
     margin: 0;
@@ -235,7 +241,7 @@ a:hover {
     cursor: pointer;
 }
 
-.progress {
+.progress-bar {
     position: relative;
 }
 
