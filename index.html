@@ -48,49 +48,49 @@
         <h2>Skills</h2>
         <div class="skill">
             <p>JavaScript</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="Proficient">
                 <div class="progress" data-width="87"></div>
             </div>
         </div>
         <div class="skill">
             <p>React.js</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="">
                 <div class="progress" data-width="79"></div>
             </div>
         </div>
         <div class="skill">
             <p>Node.js</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="">
                 <div class="progress" data-width="73"></div>
             </div>
         </div>
         <div class="skill">
             <p>HTML/CSS</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="Advanced">
                 <div class="progress" data-width="93"></div>
             </div>
         </div>
         <div class="skill">
             <p>Python</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="">
                 <div class="progress" data-width="76"></div>
             </div>
         </div>
         <div class="skill">
             <p>Flask</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="">
                 <div class="progress" data-width="70"></div>
             </div>
         </div>
         <div class="skill">
             <p>Java</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="">
                 <div class="progress" data-width="64"></div>
             </div>
         </div>
         <div class="skill">
             <p>Git</p>
-            <div class="progress-bar">
+            <div class="progress-bar" data-tooltip="">
                 <div class="progress" data-width="75"></div>
             </div>
         </div>
@@ -501,6 +501,37 @@
 
             progressBars.forEach(bar => {
                 animateProgress.observe(bar);
+            });
+
+            /////// Logic to dynamically add tooltips based on the skill percentage level ///////
+            progressBars.forEach(bar => {
+                const widt = bar.getAttribute('data-width');
+
+                let tooltipText;
+
+                if (width >= 95) {
+                    tooltipText = 'Expert';
+                } else if (width >= 90) {
+                    tooltipText = 'Advanced';
+                } else if (width >= 80) {
+                    tooltipText = 'Proficient';
+                } else if (width >= 70) {
+                    tooltipText = 'Intermediate';
+                } else if (width >= 50) {
+                    tooltipText = 'Work in Progress';
+                } else {
+                    tooltipText = 'Beginner';
+                }
+
+                bar.parentElement.setAttribute('title', tooltipText);
+                bar.parentElement.style.cursor = 'pointer';
+
+                bar.parentElement.addEventListener('click', () => {
+                    bar.innerText = width + '%';
+                    bar.style.textAlign = 'center';
+                    bar.sytle.lineHeight = '20px';
+                    bar.style.color = '#fff';
+                });
             });
         });
     </script>
