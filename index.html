@@ -431,11 +431,11 @@
                 const width = bar.getAttribute('data-width');
                 bar.style.width = width + '%';
 
-                if (width <= 50) {
+                if (width < 60) {
                     bar.style.backgroundColor = 'red';
-                } else if (width <= 70) {
+                } else if (width < 70) {
                     bar.style.backgroundColor = 'orange';
-                } else if (width <= 80) {
+                } else if (width < 80) {
                     bar.style.backgroundColor = 'yellowgreen';
                 } else {
                     bar.style.backgroundColor = 'green';
@@ -517,7 +517,7 @@
                     tooltipText = 'Proficient';
                 } else if (width >= 70) {
                     tooltipText = 'Intermediate';
-                } else if (width >= 50) {
+                } else if (width >= 60) {
                     tooltipText = 'Work in Progress';
                 } else {
                     tooltipText = 'Beginner';
