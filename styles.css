@@ -402,3 +402,36 @@ html {
 }
 
 
+
+/* Light and Dark Modes CSS */
+
+/* Light mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode .progress-bar {
+    background-color: #dddddd;
+}
+
+body.light-mode .progress {
+    color: #000000;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .progress-bar {
+    background-color: #333333;
+}
+
+body.dark-mode .progress {
+    color: #ffffff;
+}
+
+
+
