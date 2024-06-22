@@ -433,13 +433,31 @@ body.dark-mode .progress {
     color: #ffffff;
 }
 
+body.dark-mode .projects {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #444444;
+}
+
 body.dark-mode .project {
     background-color: #1e1e1e;
     color: #ffffff;
     border-color: #444444;
 }
 
+body.dark-mode .testimonials {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-left-color: #444444;
+}
+
 body.dark-mode .testimonial {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-left-color: #444444;
+}
+
+body.dark-mode .recommendation {
     background-color: #1e1e1e;
     color: #ffffff;
     border-left-color: #444444;
