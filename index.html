@@ -19,7 +19,8 @@
         <img src="pictures/20240112_194150.jpg" alt="Kevin Lin" class="profile-photo">
         <h1>Kevin Lin</h1>
         <p class="position">Software Engineer/Frontend Developer</p>
-        <button id="theme-toggle">Toggle Mode</button>
+        <button id="light-mode">Light Mode</button>
+        <button id="dark-mode">Dark Mode</button>
     </header>
 
     <section id="about" class="fade-in">
@@ -533,16 +534,38 @@
             });
 
             ///////////// Light and Dark Mode /////////////
-            const toggleSwitch = document.querySelector('#theme-toggle');
+            const lightModeButton = document.querySelector('#light-mode');
+            const darkModeButton = document.querySelector('#dark-mode');
             const currentTheme = localStorage.getItem('theme') || 'light';
 
             document.body.classList.add(currentTheme + '-mode');
 
-            toggleSwitch.addEventListener('click', () => {
-                const newTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+            function updateButtonStyles() {  /// code to update button styles on background color
+                if (currentTheme === 'light') {
+                    lightModeButton.style.backgroundColor = 'aqua';
+                    darkModeButton.style.backgroundColor = 'lightgray';
+                } else {
+                    lightModeButton.style.backgroundColor = 'lightgray';
+                    darkModeButton.style.backgroundColor = 'aqua';
+                }
+            }
+
+            updateButtonStyles();  /// invoke the function to initialize the button styles based on the curernt theme
+
+            lightModeButton.addEventListener('click', () => {
+                document.body. classList.remove('light-mode', 'dark-mode');
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light');
+                currentTheme = 'light';  /// code to update the currentTheme variable to 'light'
+                updateButtonStyles(); /// invoke the updateButtonStyles function to update the button styles
+            });
+
+            darkModeButton.addEventListener('click', () => {
                 document.body.classList.remove('light-mode', 'dark-mode');
-                document.body.classList.add(newTheme + '-mode');
-                localStorage.setItem('theme', newTheme);
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+                currentTheme = 'dark'; /// code to update the currentTheme variable to 'dark'
+                updateButtonStyles(); /// invoke the updateButtonStyles function to update the button styles
             });
         });
     </script>
