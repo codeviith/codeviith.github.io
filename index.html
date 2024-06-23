@@ -19,8 +19,10 @@
         <img src="pictures/20240112_194150.jpg" alt="Kevin Lin" class="profile-photo">
         <h1>Kevin Lin</h1>
         <p class="position">Software Engineer/Frontend Developer</p>
-        <button id="light-mode">Light Mode</button>
-        <button id="dark-mode">Dark Mode</button>
+        <div>
+            <button id="light-mode">Light Mode</button>
+            <button id="dark-mode">Dark Mode</button>
+        </div>
     </header>
 
     <section id="about" class="fade-in">
@@ -503,7 +505,7 @@
             progressBars.forEach(bar => {
                 animateProgress.observe(bar);
 
-            /// Dynamic tooltips based on skill level ///
+                /// Dynamic tooltips based on skill level ///
                 const width = bar.getAttribute('data-width');
 
                 let tooltipText;
@@ -536,24 +538,24 @@
             ///////////// Light and Dark Mode /////////////
             const lightModeButton = document.querySelector('#light-mode');
             const darkModeButton = document.querySelector('#dark-mode');
-            const currentTheme = localStorage.getItem('theme') || 'light';
+            let currentTheme = localStorage.getItem('theme') || 'light';
 
-            document.body.classList.add(currentTheme + '-mode');
+            document.body.classList.add(currentTheme + '-mode');  /// code to apply initial theme
 
             function updateButtonStyles() {  /// code to update button styles on background color
                 if (currentTheme === 'light') {
-                    lightModeButton.style.backgroundColor = 'aqua';
-                    darkModeButton.style.backgroundColor = 'lightgray';
+                    lightModeButton.classList.add('active');
+                    darkModeButton.classList.remove('active');
                 } else {
-                    lightModeButton.style.backgroundColor = 'lightgray';
-                    darkModeButton.style.backgroundColor = 'aqua';
+                    lightModeButton.classList.remove('active');
+                    darkModeButton.classList.add('active');
                 }
             }
 
             updateButtonStyles();  /// invoke the function to initialize the button styles based on the curernt theme
 
             lightModeButton.addEventListener('click', () => {
-                document.body. classList.remove('light-mode', 'dark-mode');
+                document.body.classList.remove('light-mode', 'dark-mode');
                 document.body.classList.add('light-mode');
                 localStorage.setItem('theme', 'light');
                 currentTheme = 'light';  /// code to update the currentTheme variable to 'light'

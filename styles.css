@@ -463,3 +463,18 @@ body.dark-mode .recommendation {
     border-left-color: #444444;
 }
 
+/* button styles */
+
+/* Default */
+button {
+    background-color: lightgray;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Active */
+button.active {
+    background-color: aqua;
+}
