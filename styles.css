@@ -11,6 +11,7 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: relative;
 }
 
 section {
@@ -469,22 +470,23 @@ body.dark-mode .recommendation {
 .theme-toggle-container {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 20px;
     display: flex;
     gap: 10px;
 }
 
 /* Default */
-button {
+.mode-label button {
     background-color: lightgray;
     margin: 5px;
     padding: 10px 20px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* Active */
-button.active {
+.mode-label button.active {
     background-color: aqua;
 }
