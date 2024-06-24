@@ -465,12 +465,22 @@ body.dark-mode .recommendation {
 
 /* button styles */
 
+/* button container */
+.theme-toggle-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
 /* Default */
 button {
     background-color: lightgray;
-    border: none;
-    padding: 10px 20px;
     margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
 }
 
