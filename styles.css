@@ -464,6 +464,10 @@ body.dark-mode .recommendation {
     border-left-color: #444444;
 }
 
+body.dark-mode #contact a {
+    color: rgb(4, 224, 240);
+}
+
 /* button styles */
 
 /* button container */
