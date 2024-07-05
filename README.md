@@ -17,11 +17,23 @@ You can visit my portfolio <a href="https://codeviith.github.io/" target="_blank
 
 ## About
 
-I am a versatile and driven software engineer with a passion for developing innovative solutions and seeing projects through from inception to completion. My recent project "DIYeSk8Guide", a full-stack web application, highlights my commitment to empowering individuals to build their own electric skateboards. This project showcases my technical proficiency, dedication to hands-on creation, and problem-solving abilities.
+I am a versatile and driven software engineer with a passion for developing innovative solutions and seeing
+projects through from inception to completion. My recent project "DIYeSk8Guide", a full-stack web
+application, highlights my commitment to empowering individuals to build their own electric skateboards.
+This project showcases my technical proficiency, dedication to hands-on creation, and problem-solving
+abilities.
 
-With over two years of experience in web development and design, I possess a robust entrepreneurial mindset and excel in the design, implementation, and verification of components. I effectively translate both functional and technical requirements into comprehensive architectures. My expertise includes optimizing software and website designs to enhance scalability, reliability, and performance.
+With over two years of experience in web development and design, I possess a robust technical mindset
+and excel in the design, implementation, and verification of components. I effectively translate both
+functional and technical requirements into comprehensive architectures, optimizing software and website
+designs to enhance scalability, reliability, and performance.
 
-As a graduate with a background in both software engineering and podiatric medicine, I bring a unique blend of technical and mechanical expertise. My leadership in technical projects consistently delivers innovative solutions, and I am excited to continue pushing the boundaries of what is possible in software development. Eager to contribute my skills and passion to future endeavors, I am committed to building projects that make a significant impact.
+As a graduate with a background in both software engineering and podiatric medicine, I bring a unique blend
+of technical and mechanical expertise. My experience in technical undertakings has equipped me with the
+ability to contribute to innovative solutions. I am passionate about web and software development and I am
+eager to collaborate with teams to create meaningful projects. Committed to applying my skills and knowledge, 
+I aim to support and enhance the work of my future colleagues and organization by building applications that
+make a significant impact.
 
 ## Features
 
@@ -63,3 +75,6 @@ Feel free to reach out to me via the contact form on my portfolio website or thr
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Credits
+&copy; 2024 Kevin Lin. All rights reserved.
