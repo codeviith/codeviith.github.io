@@ -515,7 +515,7 @@ body.dark-mode #contact a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    padding: 20px 0;
 }
 
 
