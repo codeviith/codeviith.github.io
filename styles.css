@@ -523,7 +523,7 @@ body.dark-mode #contact a {
 
 /* footer styles */
 
-footer {
+.footer {
     text-align: center;
     padding: 10px 0;
     background-color: #333;
