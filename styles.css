@@ -82,6 +82,8 @@ a:hover {
 
 
 
+
+
 /* justify text for about and projects section */
 #about p {
     text-align: justify;
@@ -96,6 +98,8 @@ a:hover {
 #contact a {
     color: darkblue;
 }
+
+
 
 
 
@@ -184,6 +188,7 @@ a:hover {
 
 
 
+
 /* hRef link buttons */
 .button {
     display: inline-block;
@@ -202,6 +207,7 @@ a:hover {
 .button:hover {
     background-color: #555;
 }
+
 
 
 
@@ -264,6 +270,8 @@ a:hover {
 
 
 
+
+
 /* github contributions and certification badges */
 
 /* #github-contributions {
@@ -311,6 +319,8 @@ a:hover {
 }
 
 
+
+
 /* hobbies */
 
 .sub-header {
@@ -329,6 +339,7 @@ a:hover {
 #hobbies ul li {
     margin: 5px 0;
 }
+
 
 
 
@@ -360,6 +371,7 @@ a:hover {
 html {
     scroll-behavior: smooth;
 }
+
 
 
 
@@ -401,6 +413,7 @@ html {
 .timeline-item:last-child::after {
     content: none;
 }
+
 
 
 
@@ -468,6 +481,8 @@ body.dark-mode #contact a {
     color: rgb(4, 224, 240);
 }
 
+
+
 /* button styles */
 
 /* button container */
@@ -494,3 +509,29 @@ body.dark-mode #contact a {
 .mode-label button.active {
     background-color: aqua;
 }
+
+.project-button,
+.github-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+
+
+
+/* footer styles */
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
