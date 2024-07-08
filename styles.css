@@ -84,6 +84,55 @@ a:hover {
 
 
 
+/* Styles for the Table of Contents */
+.toc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 100vh;
+    background-color: var(--toc-bg-color-dark);
+    color: var(--toc-text-color-dark);
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+
+.toc h2 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.toc nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.toc nav ul li {
+    margin: 0.3rem 0;
+}
+
+.toc nav ul li a {
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.toc nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Add padding to body so content don't get hidden under TOC */
+body {
+    padding-left: 200px;
+}
+
+
+
+
+
+
 /* justify text for about and projects section */
 #about p {
     text-align: justify;
@@ -417,12 +466,22 @@ html {
 
 
 
-/* Light and Dark Modes CSS */
+/* CSS variables for themes */
+:root {
+    --bg-color-light: #ffffff;
+    --text-color-light: #000000;
+    --bg-color-dark: #333333;
+    --text-color-dark: #ffffff;
+    --toc-bg-color-light: #f4f4f4;
+    --toc-text-color-light: #000000;
+    --toc-bg-color-dark: #1e1e1e;
+    --toc-text-color-dark: #ffffff;
+}
 
-/* Light mode */
+/* Light mode styles */
 body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
 }
 
 body.light-mode .progress-bar {
@@ -433,10 +492,53 @@ body.light-mode .progress {
     color: #000000;
 }
 
-/* Dark mode */
+body.light-mode #projects {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    border-color: #444444;
+}
+
+body.light-mode .project {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    border-color: #444444;
+}
+
+body.light-mode #testimonials {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    border-left-color: #444444;
+}
+
+body.light-mode .testimonial {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    border-left-color: #444444;
+}
+
+body.light-mode .recommendation {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    border-left-color: #444444;
+}
+
+body.light-mode #contact a {
+    color: rgb(4, 224, 240);
+}
+
+body.light-mode .toc {
+    background-color: var(--toc-bg-color-light);
+    color: var(--toc-text-color-light);
+}
+
+body.light-mode .toc nav ul li a {
+    color: var(--toc-text-color-light);
+}
+
+/* Dark mode styles */
 body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
 }
 
 body.dark-mode .progress-bar {
@@ -448,38 +550,49 @@ body.dark-mode .progress {
 }
 
 body.dark-mode #projects {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
     border-color: #444444;
 }
 
 body.dark-mode .project {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
     border-color: #444444;
 }
 
 body.dark-mode #testimonials {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
     border-left-color: #444444;
 }
 
 body.dark-mode .testimonial {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
     border-left-color: #444444;
 }
 
 body.dark-mode .recommendation {
-    background-color: #1e1e1e;
-    color: #ffffff;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
     border-left-color: #444444;
 }
 
 body.dark-mode #contact a {
     color: rgb(4, 224, 240);
 }
+
+body.dark-mode .toc {
+    background-color: var(--toc-bg-color-dark);
+    color: var(--toc-text-color-dark);
+}
+
+body.dark-mode .toc nav ul li a {
+    color: var(--toc-text-color-dark);
+}
+
+
 
 
 
