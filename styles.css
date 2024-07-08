@@ -94,6 +94,10 @@ a:hover {
     --toc-text-color-light: #000000;
     --toc-bg-color-dark: #1e1e1e;
     --toc-text-color-dark: #ffffff;
+    --button-bg-light: #333333;
+    --button-text-light: #ffffff;
+    --button-bg-dark: #555555;
+    --button-text-dark: #ffffff;
 }
 
 
@@ -264,17 +268,17 @@ body {
     padding: 10px 20px;
     margin: 10px 0;
     font-size: 16px;
-    color: #fff;
-    background-color: #333;
     border: none;
     border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #555;
+    /* background-color: #555; */
+    text-decoration: underline;
 }
 
 
@@ -540,6 +544,15 @@ body.light-mode #contact a {
     color: rgb(4, 224, 240);
 }
 
+body.light-mode .button {
+    background-color: var(--button-bg-light);
+    color: var(--button-text-light);
+}
+
+body.light-mode .button:hover {
+    background-color: #555;
+}
+
 body.light-mode .toc {
     background-color: var(--toc-bg-color-light);
     color: var(--toc-text-color-light);
@@ -599,6 +612,15 @@ body.dark-mode .recommendation {
 
 body.dark-mode #contact a {
     color: rgb(4, 224, 240);
+}
+
+body.dark-mode .button {
+    background-color: var(--button-bg-dark);
+    color: var(--button-text-dark);
+}
+
+body.dark-mode .button:hover {
+    background-color: #777;
 }
 
 body.dark-mode .toc {
