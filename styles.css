@@ -494,6 +494,10 @@ body.light-mode {
     color: var(--text-color-light);
 }
 
+body.light-mode h2 {
+    border-bottom: 2px solid #333;
+}
+
 body.light-mode .progress-bar {
     background-color: #dddddd;
 }
@@ -549,6 +553,10 @@ body.light-mode .toc nav ul li a {
 body.dark-mode {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
+}
+
+body.dark-mode h2 {
+    border-bottom: 2px solid #fff;
 }
 
 body.dark-mode .progress-bar {
