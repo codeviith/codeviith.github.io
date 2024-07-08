@@ -84,8 +84,28 @@ a:hover {
 
 
 
+/* CSS variables for themes */
+:root {
+    --bg-color-light: #ffffff;
+    --text-color-light: #000000;
+    --bg-color-dark: #333333;
+    --text-color-dark: #ffffff;
+    --toc-bg-color-light: #f4f4f4;
+    --toc-text-color-light: #000000;
+    --toc-bg-color-dark: #1e1e1e;
+    --toc-text-color-dark: #ffffff;
+}
+
+
+
+
+
+
 /* Styles for the Table of Contents */
 .toc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -466,17 +486,7 @@ html {
 
 
 
-/* CSS variables for themes */
-:root {
-    --bg-color-light: #ffffff;
-    --text-color-light: #000000;
-    --bg-color-dark: #333333;
-    --text-color-dark: #ffffff;
-    --toc-bg-color-light: #f4f4f4;
-    --toc-text-color-light: #000000;
-    --toc-bg-color-dark: #1e1e1e;
-    --toc-text-color-dark: #ffffff;
-}
+
 
 /* Light mode styles */
 body.light-mode {
