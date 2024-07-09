@@ -375,6 +375,46 @@ body {
 
 
 
+/* project code snippet */
+
+.code-snippets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.code-block {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+.code-block h4 {
+    margin-top: 0;
+}
+
+pre {
+    margin: 0;
+    font-family: monospace;
+}
+
+code {
+    display: block;
+    white-space: pre-wrap;
+}
+
+.code-snippet-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+
 
 /* github contributions and certification badges */
 
@@ -645,7 +685,7 @@ body.dark-mode h2 {
 }
 
 body.dark-mode .progress-bar {
-    background-color: #333333;
+    background-color: #000000;
 }
 
 body.dark-mode .progress {

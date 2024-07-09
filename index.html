@@ -155,8 +155,7 @@
             <p>
                 Through DIYeSk8Guide, I aim to inspire and assist fellow eboarding enthusiasts, combining my technical
                 expertise with my passion for hands-on creation. This project has not only enhanced my skills as a
-                developer but also strengthened my dedication to building innovative and impactful solutions in the
-                world of electric skateboarding.
+                developer but also strengthened my dedication to developing innovative and impactful software solutions.
             </p>
             <div class="gallery">
                 <a href="#" data-target="img1"><img src="pictures/DIYeSk8Guide - Home.png" alt="Home"></a>
@@ -171,6 +170,71 @@
             <p><a href="https://github.com/codeviith/capstone-project-diyesk8guide" target="_blank" class="button">View
                     on GitHub <i class="fas fa-external-link-alt"></i></a>
             </p>
+            <div class="code-snippet-buttons">
+                <button class="button"
+                    onclick="toggleCodeSnippet('problem-code-1-diyesk8guide', 'solution-code-1-diyesk8guide')">View Code
+                    Snippet 1</button>
+                <button class="button"
+                    onclick="toggleCodeSnippet('problem-code-2-diyesk8guide', 'solution-code-2-diyesk8guide')">View Code
+                    Snippet 2</button>
+                <button class="button"
+                    onclick="toggleCodeSnippet('problem-code-3-diyesk8guide', 'solution-code-3-diyesk8guide')">View Code
+                    Snippet 3</button>
+            </div>
+            <div id="code-snippets-diyesk8guide-1" class="code-snippets" style="display: none;">
+                <div class="code-block">
+                    <h4>Problem Code:</h4>
+                    <pre id="problem-code-1-diyesk8guide" class="code-snippet">
+                        <code>
+    //input problem code 1 here
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-block">
+                    <h4>Solution Code:</h4>
+                    <pre id="solution-code-1-diyesk8guide" class="code-snippet">
+                        <code>
+    //input solution code 1 here
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="code-snippets-diyesk8guide-2" class="code-snippets" style="display: none;">
+                <div class="code-block">
+                    <h4>Problem Code:</h4>
+                    <pre id="problem-code-2-diyesk8guide" class="code-snippet">
+                        <code>
+    //input problem code 2 here
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-block">
+                    <h4>Solution Code:</h4>
+                    <pre id="solution-code-2-diyesk8guide" class="code-snippet">
+                        <code>
+    //input solution code 2 here
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div id="code-snippets-diyesk8guide-3" class="code-snippets" style="display: none;">
+                <div class="code-block">
+                    <h4>Problem Code:</h4>
+                    <pre id="problem-code-3-diyesk8guide" class="code-snippet">
+                        <code>
+    //input problem code 3 here
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-block">
+                    <h4>Solution Code:</h4>
+                    <pre id="solution-code-3-diyesk8guide" class="code-snippet">
+                        <code>
+    //input solution code 3 here
+                        </code>
+                    </pre>
+                </div>
+            </div>
         </div>
         <div class="project">
             <h3>Esk8Gather (In progress)</h3>
@@ -477,8 +541,8 @@
             }
         });
 
-        ///////////// reCAPTCHA code for contact section and testimonials /////////////
 
+        ///////////// reCAPTCHA code for contact section and testimonials /////////////
         ////// reCAPTCHA v2  //////
         function verifyRecaptcha(event) {
             event.preventDefault();
@@ -497,16 +561,6 @@
             }
         }
 
-        function showEmail(emailId) {
-            var recommendations = document.getElementById('recommendations');
-
-            if (recommendations.classList.contains('verified')) {
-                document.getElementById(emailId).style.display = 'block';
-            } else {
-                alert("Please verify that you are not a robot using the reCAPTCHA in the contact section.");
-            }
-        }
-
         ////// reCAPTCHA v3  //////
         // function handleFormSubmit(event) {
         //     event.preventDefault();
@@ -521,6 +575,31 @@
         //         });
         //     });
         // }
+
+
+        ///////////// Misc code for other features  /////////////
+        function showEmail(emailId) {
+            var recommendations = document.getElementById('recommendations');
+
+            if (recommendations.classList.contains('verified')) {
+                document.getElementById(emailId).style.display = 'block';
+            } else {
+                alert("Please verify that you are not a robot using the reCAPTCHA in the contact section.");
+            }
+        }
+
+        function toggleCodeSnippet(problemId, solutionId) {
+            const problemSnippet = document.getElementById(problemId);
+            const solutionSnippet = document.getElementById(solutionId);
+            const snippetsContainer = document.getElementById(problemId).parentNode.parentNode;
+
+            if (snippetsContainer.style.display === "none") {
+                snippetsContainer.style.display = "block";
+            } else {
+                snippetsContainer.style.display = "none";
+            }
+        }
+
 
         ///////////// Fade-In animation on scroll /////////////
         document.addEventListener('DOMContentLoaded', function () {
