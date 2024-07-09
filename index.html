@@ -171,66 +171,28 @@
                     on GitHub <i class="fas fa-external-link-alt"></i></a>
             </p>
             <div class="code-snippet-buttons">
-                <button class="button"
-                    onclick="toggleCodeSnippet('problem-code-1-diyesk8guide', 'solution-code-1-diyesk8guide')">View Code
-                    Snippet 1</button>
-                <button class="button"
-                    onclick="toggleCodeSnippet('problem-code-2-diyesk8guide', 'solution-code-2-diyesk8guide')">View Code
-                    Snippet 2</button>
-                <button class="button"
-                    onclick="toggleCodeSnippet('problem-code-3-diyesk8guide', 'solution-code-3-diyesk8guide')">View Code
-                    Snippet 3</button>
+                <button class="button" onclick="toggleCodeSnippet('problem-code-1', 'solution-code-1')">
+                    View Code Snippet 1
+                </button>
+                <button class="button" onclick="toggleCodeSnippet('problem-code-2', 'solution-code-2')">
+                    View Code Snippet 2
+                </button>
+                <button class="button" onclick="toggleCodeSnippet('problem-code-3', 'solution-code-3')">
+                    View Code Snippet 3
+                </button>
             </div>
-            <div id="code-snippets-diyesk8guide-1" class="code-snippets" style="display: none;">
+            <div id="code-snippets-container" class="code-snippets" style="display: none;">
                 <div class="code-block">
                     <h4>Problem Code:</h4>
-                    <pre id="problem-code-1-diyesk8guide" class="code-snippet">
+                    <pre id="problem-code" class="code-snippet">
                         <code>
-    //input problem code 1 here
                         </code>
                     </pre>
                 </div>
                 <div class="code-block">
                     <h4>Solution Code:</h4>
-                    <pre id="solution-code-1-diyesk8guide" class="code-snippet">
+                    <pre id="solution-code" class="code-snippet">
                         <code>
-    //input solution code 1 here
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <div id="code-snippets-diyesk8guide-2" class="code-snippets" style="display: none;">
-                <div class="code-block">
-                    <h4>Problem Code:</h4>
-                    <pre id="problem-code-2-diyesk8guide" class="code-snippet">
-                        <code>
-    //input problem code 2 here
-                        </code>
-                    </pre>
-                </div>
-                <div class="code-block">
-                    <h4>Solution Code:</h4>
-                    <pre id="solution-code-2-diyesk8guide" class="code-snippet">
-                        <code>
-    //input solution code 2 here
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <div id="code-snippets-diyesk8guide-3" class="code-snippets" style="display: none;">
-                <div class="code-block">
-                    <h4>Problem Code:</h4>
-                    <pre id="problem-code-3-diyesk8guide" class="code-snippet">
-                        <code>
-    //input problem code 3 here
-                        </code>
-                    </pre>
-                </div>
-                <div class="code-block">
-                    <h4>Solution Code:</h4>
-                    <pre id="solution-code-3-diyesk8guide" class="code-snippet">
-                        <code>
-    //input solution code 3 here
                         </code>
                     </pre>
                 </div>
@@ -588,15 +550,30 @@
             }
         }
 
-        function toggleCodeSnippet(problemId, solutionId) {
-            const problemSnippet = document.getElementById(problemId);
-            const solutionSnippet = document.getElementById(solutionId);
-            const snippetsContainer = document.getElementById(problemId).parentNode.parentNode;
+        const codeSnippets = {
+            'problem-code-1': `// Input problem code 1 here...`,
+            'solution-code-1': `// Input solution code 1 here...`,
+            'problem-code-2': `// Input problem code 2 here...`,
+            'solution-code-2': `// Input solution code 2 here...`,
+            'problem-code-3': `// Input problem code 3 here...`,
+            'solution-code-3': `// Input solution code 3 here...`
+        }
 
-            if (snippetsContainer.style.display === "none") {
-                snippetsContainer.style.display = "block";
+        function toggleCodeSnippet(problemId, solutionId) {
+            const container = document.getElementById('code-snippets-container');
+            const problemCode = document.getElementById('problem-code').querySelector('code');
+            const solutionCode = document.getElementById('solution-code').querySelector('code');
+            const problemHeader = document.querySelector('#code-snippets-container .code-block:nth-child(1) h4');
+            const solutionHeader = document.querySelector('#code-snippets-container .code-block:nth-child(2) h4');
+
+            if (container.style.display === 'none' || problemCode.textContent !== codeSnippets[problemId]) {
+                problemCode.textContent = codeSnippets[problemId];
+                solutionCode.textContent = codeSnippets[solutionId];
+                problemHeader.textContent = `Problem Code ${problemId.split('-')[2]}:`;
+                solutionHeader.textContent = `Solution Code ${solutionId.split('-')[2]}:`;
+                container.style.display = 'block';
             } else {
-                snippetsContainer.style.display = "none";
+                container.style.display = 'none';
             }
         }
 
