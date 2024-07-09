@@ -287,6 +287,31 @@ body {
     text-decoration: underline;
 }
 
+.certificate-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.certificate-button {
+    display: inline-block;
+    padding: 5px 5px;
+    margin: 0;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.certificate-button:hover {
+    text-decoration: underline;
+}
+
+
+
 
 
 
@@ -501,6 +526,25 @@ html {
     content: none;
 }
 
+.timeline-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timeline-photo {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.timeline-item img {
+    display: block;
+    margin-top: 10px;
+    max-width: 100%; /* Ensure the image does not overflow the container */
+    height: auto; /* Maintain the image aspect ratio */
+}
+
 
 
 
@@ -563,12 +607,14 @@ body.light-mode #contactInfo a {
     color: var(--link-color-light);
 }
 
-body.light-mode .button {
+body.light-mode .button,
+body.light-mode .certificate-button {
     background-color: var(--button-bg-light);
     color: var(--button-text-light);
 }
 
-body.light-mode .button:hover {
+body.light-mode .button:hover,
+body.light-mode .certificate-button:hover {
     background-color: #555;
 }
 
@@ -638,12 +684,14 @@ body.dark-mode #contactInfo a {
     color: var(--link-color-dark);
 }
 
-body.dark-mode .button {
+body.dark-mode .button,
+body.dark-mode .certificate-button {
     background-color: var(--button-bg-dark);
     color: var(--button-text-dark);
 }
 
-body.dark-mode .button:hover {
+body.dark-mode .button:hover,
+body.dark-mode .certificate-button:hover {
     background-color: #777;
 }
 
