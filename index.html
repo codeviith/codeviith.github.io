@@ -21,7 +21,7 @@
         <p class="position">Software Engineer/Frontend Developer</p>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </header>
-    
+
     <section id="toc" class="toc">
         <h2>Table of Contents</h2>
         <nav>
@@ -166,7 +166,8 @@
                 <a href="#" data-target="img5"><img src="pictures/DIYeSk8Guide - Guru.png" alt="Guru"></a>
                 <a href="#" data-target="img6"><img src="pictures/DIYeSk8Guide - Gallery.png" alt="Gallery"></a>
             </div>
-            <p><a href="https://diyesk8guide.com" target="_blank" class="button">Explore the Application <i class="fas fa-external-link-alt"></i></a></p>
+            <p><a href="https://diyesk8guide.com" target="_blank" class="button">Explore the Application <i
+                        class="fas fa-external-link-alt"></i></a></p>
             <p><a href="https://github.com/codeviith/capstone-project-diyesk8guide" target="_blank" class="button">View
                     on GitHub <i class="fas fa-external-link-alt"></i></a>
             </p>
@@ -252,17 +253,14 @@
             </div>
         </div>
         <div class="github-button">
-            <p><a href="https://github.com/codeviith" target="_blank" class="button">View Github Profile <i class="fas fa-external-link-alt"></i></a></p>
+            <p><a href="https://github.com/codeviith" target="_blank" class="button">View Github Profile <i
+                        class="fas fa-external-link-alt"></i></a></p>
         </div>
     </section>
 
     <section id="testimonials" class="fade-in">
         <h2>Recommendations & Testimonials</h2>
-        <div class="testimonial">
-            <!-- <p>"Testimonials goes here." - Jane Doe, Project Manager</p> -->
-        </div>
-        <!-- Add more testimonials as needed -->
-        <div class="recommendation">
+        <div id="recommendations" class="recommendation">
             <ul>
                 <li>
                     <p>
@@ -289,8 +287,15 @@
                     </p>
                     <br>
                     <p>Ben Cavins - Software Engineering Instructor, Flatiron School</p>
+                    <button type="button" class="button" onclick="showEmail('ben-email')">Show Ben's Email</button>
+                    <p id="ben-email" style="display:none;">Email: ben-example@gmail.com</p>
                 </li>
                 <br>
+                <!-- Add more recommendations as needed -->
+            </ul>
+        </div>
+        <div id="testimonials" class="testimonial">
+            <ul>
                 <li>
                     <p>
                         "I am associated with Kevin through Flatiron School Career Services. Aside from being a great
@@ -307,11 +312,13 @@
                     </p>
                     <br>
                     <p>Anne Glisten - Career Coach Specialist, Flatiron School</p>
+                    <button type="button" class="button" onclick="showEmail('anne-email')">Show Anne's Email</button>
+                    <p id="anne-email" style="display:none;">Email: anne-example@gmail.com</p>
                 </li>
                 <br>
+                <!-- Add more testimonials as needed -->
             </ul>
         </div>
-        <!-- Add more recommendations as needed -->
     </section>
 
     <section id="hobbies" class="fade-in">
@@ -335,7 +342,7 @@
     <section id="contact" class="fade-in">
         <h2>Contact</h2>
         <!-- reCAPTCHA v2 -->
-        <form id="contactForm" onsubmit="return showContactInfo()">
+        <form id="contactForm" onsubmit="return verifyRecaptcha(event)">
             <div class="g-recaptcha" data-sitekey="6Lfh4vUpAAAAAMI2Qq5ompdWU6AUDN4V4m7psohc"></div>
             <br>
             <button type="submit" class="button">Verify to See Contact Info</button>
@@ -359,14 +366,17 @@
                     <p>Email: <a href="mailto:kclin128@gmail.com">kclin128@gmail.com</a></p>
                 </li>
                 <li>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/kevinlin128/" target="_blank">View LinkedIn <i class="fas fa-external-link-alt"></i></a>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/kevinlin128/" target="_blank">View LinkedIn <i
+                                class="fas fa-external-link-alt"></i></a>
                     </p>
                 </li>
                 <li>
-                    <p>Github: <a href="https://github.com/codeviith/" target="_blank">View Github <i class="fas fa-external-link-alt"></i></a></p>
+                    <p>Github: <a href="https://github.com/codeviith/" target="_blank">View Github <i
+                                class="fas fa-external-link-alt"></i></a></p>
                 </li>
                 <li>
-                    <p>Blog: <a href="https://hashnode.com/@codeviith" target="_blank">View Blog <i class="fas fa-external-link-alt"></i></a></p>
+                    <p>Blog: <a href="https://hashnode.com/@codeviith" target="_blank">View Blog <i
+                                class="fas fa-external-link-alt"></i></a></p>
                 </li>
             </ul>
         </div>
@@ -456,21 +466,33 @@
             }
         });
 
-        ///////////// reCAPTCHA code for contact section  /////////////
+        ///////////// reCAPTCHA code for contact section and testimonials /////////////
 
         ////// reCAPTCHA v2  //////
-        function showContactInfo() {
+        function verifyRecaptcha(event) {
             event.preventDefault();
 
-            var response = grecaptcha.getResponse();  // Code to get reCAPTCHA response
+            var response = grecaptcha.getResponse();  // code to get reCAPTCHA response
 
-            if (response.length == 0) {  // Code to check if reCAPTCHA is verified
+            if (response.length == 0) {  // code to check if reCAPTCHA is verified
                 alert("Please verify that you are not a robot.");
                 return false;
-            } else {     // Code to show contact information
+            } else {     // Code to show contact and recommendation information
                 document.getElementById('contactInfo').style.display = 'block';
                 document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('recommendations').classList.add('verified');
+                document.getElementById('testimonials').classList.add('verified');
                 return true;
+            }
+        }
+
+        function showEmail(emailId) {
+            var recommendations = document.getElementById('recommendations');
+
+            if (recommendations.classList.contains('verified')) {
+                document.getElementById(emailId).style.display = 'block';
+            } else {
+                alert("Please verify that you are not a robot using the reCAPTCHA in the contact section.");
             }
         }
 
