@@ -398,11 +398,19 @@ body {
 }
 
 
+/* testimonials */
+.sub-header-testimonial {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
 
 
 /* hobbies */
 
-.sub-header {
+.sub-header-hobbies {
     font-weight: bold;
     font-size: 18px;
     margin-top: 10px;
@@ -475,7 +483,7 @@ html {
     left: 20px;
     width: 10px;
     height: 10px;
-    background: #333;
+    background: var(--timeline-mark-color, #333);
     border-radius: 50%;
 }
 
@@ -486,7 +494,7 @@ html {
     left: 24px;
     width: 2px;
     height: 100%;
-    background: #333;
+    background: var(--timeline-line-color, #333);
 }
 
 .timeline-item:last-child::after {
@@ -516,6 +524,11 @@ body.light-mode .progress {
     color: #000000;
 }
 
+body.light-mode {
+    --timeline-mark-color: #333;
+    --timeline-line-color: #333;
+}
+
 body.light-mode #projects {
     background-color: var(--bg-color-light);
     color: var(--text-color-light);
@@ -531,13 +544,13 @@ body.light-mode .project {
 body.light-mode #testimonials {
     background-color: var(--bg-color-light);
     color: var(--text-color-light);
-    border-left-color: #444444;
+    border-left-color: var(--bg-color-dark);
 }
 
 body.light-mode .testimonial {
     background-color: var(--bg-color-light);
     color: var(--text-color-light);
-    border-left-color: #444444;
+    border-left-color: var(--bg-color-dark);
 }
 
 body.light-mode .recommendation {
@@ -586,6 +599,11 @@ body.dark-mode .progress {
     color: #ffffff;
 }
 
+body.dark-mode {
+    --timeline-mark-color: #fff;
+    --timeline-line-color: #fff;
+}
+
 body.dark-mode #projects {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
@@ -601,13 +619,13 @@ body.dark-mode .project {
 body.dark-mode #testimonials {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
-    border-left-color: #444444;
+    border-left-color: var(--bg-color-light);;
 }
 
 body.dark-mode .testimonial {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
-    border-left-color: #444444;
+    border-left-color: var(--bg-color-light);;
 }
 
 body.dark-mode .recommendation {
