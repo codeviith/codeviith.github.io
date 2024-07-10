@@ -137,7 +137,7 @@
             <li>Electronic Medical Record (EMR) Systems: Cerner, Epic Care, and Chart Maker.</li>
             <li>Languages: English (Fluent), Chinese (Fluent), Taiwanese (Fluent), Japanese (Basic) and German (Basic).
             </li>
-            <li>Typing Speed: 72 WPM</li>
+            <li>Typing Speed: 75 WPM</li>
             <!-- Add more skills as needed -->
         </ul>
     </section>
@@ -575,6 +575,7 @@ This includes checking if the fields are empty, ensuring positive values, and ha
             },
             'solution-code-1': {
                 code: `
+//React.js
 const isFormValid = () => {
     if (!image) {
         setUploadError("No image file selected.");
@@ -652,6 +653,7 @@ const isFormValid = () => {
             },
             'solution-code-2': {
                 code: `
+//Frontend(React.js)
 const INACTIVITY_TIMEOUT_VALUE = 15 * 60 * 1000;  
 const AUTO_LOGOUT_TIMEOUT_VALUE = 15.5 * 60 * 1000;  
 const COUNTDOWN_TO_LOGOUT = 60;  
@@ -775,14 +777,112 @@ useEffect(() => {
         document.removeEventListener('wheel', disableBackgroundInteraction);
     };
 }, [showInactivityModal]);
+
+
+
+//Backend (Python)
+@app.before_request
+def before_request_func():
+    excluded_routes = ['login', 'signup', 'static', 'bump', 'keep_session_alive']
+    if request.endpoint not in excluded_routes:
+        if 'last_activity' in session:
+            last_activity = isoparse(session['last_activity'])
+            if datetime.now(timezone.utc) - last_activity > timedelta(minutes=16):
+                session.clear()
+                return jsonify({'error': 'Session timed out. Please log in again.'}), 401
+            else:
+                session['last_activity'] = datetime.now(timezone.utc).isoformat()
+
+@app.route('/keep_session_alive', methods=['POST'])
+def keep_session_alive():
+    if 'user_id' in session:
+        session['last_activity'] = datetime.now(timezone.utc).isoformat()
+        return jsonify({'message': 'Session refreshed successfully.'}), 200
+    else:
+        return jsonify({'error': 'Session expired or invalid.'}), 401
 `
             },
             'problem-code-3': {
-                title: 'Placeholder Title for Problem 3',
-                code: `// Input problem code 3 here...`
+                title: 'Implement Image Upload with AWS S3 and Image Resizing',
+                code: `Upload images to AWS S3 while ensuring they are resized to specific dimensions to maintain consistency and reduce storage costs.`
             },
             'solution-code-3': {
-                code: `// Input solution code 3 here...`
+                code: `
+//Python
+@app.route('/gallery/upload', methods=['POST'])
+def upload_image():
+    if 'user_id' not in session:
+        return jsonify({'error': 'Authentication required.'}), 401
+
+    user_id = session['user_id']
+    image = request.files.get('image')
+
+    if not image:
+        return jsonify({'error': 'No image provided'}), 400
+
+    filename = secure_filename(image.filename)
+    
+    try:
+        with Image.open(image.stream) as img:
+            original_width, original_height = img.size
+
+            if original_width > original_height:
+                target_width = 1600
+                aspect_ratio = original_height / original_width
+                target_height = int(target_width * aspect_ratio)
+            else:
+                target_height = 1600
+                aspect_ratio = original_width / original_height
+                target_width = int(target_height * aspect_ratio)
+
+            if original_width > target_width or original_height > target_height:
+                img = img.resize((target_width, target_height), Image.LANCZOS)
+            
+            img_io = BytesIO()
+            img_format = 'JPEG' if 'jpeg' in image.content_type else 'PNG'
+            img.save(img_io, format=img_format)
+            img_io.seek(0)
+
+            s3_client.upload_fileobj(
+                img_io,
+                S3_BUCKET_NAME,
+                filename,
+                ExtraArgs={
+                    'ContentType': image.content_type,
+                }
+            )
+
+            image_url = f'https://\{S3_BUCKET_NAME}.s3.amazonaws.com/\{filename}'
+
+        new_gallery_entry = Gallery(
+            image_filename=filename,
+            image_url=image_url,
+            user_id=user_id,
+            deck_brand='',
+            deck_size=None,
+            battery_series=None,
+            battery_parallel=None,
+            motor_size=None,
+            motor_kv=None,
+            motor_power=None,
+            wheel_type='',
+            wheel_size='',
+            max_speed=None,
+            max_range=None,
+            other_features=''
+        )
+        db.session.add(new_gallery_entry)
+        db.session.commit()
+
+        return jsonify({
+            'message': 'Image uploaded successfully',
+            'imageURL': image_url,
+            'id': new_gallery_entry.id
+        }), 200
+    except Exception as e:
+        print(f"Error processing image: \{e}")
+        return jsonify({'error': str(e)}), 500
+`
             }
         };
 
