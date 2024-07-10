@@ -28,6 +28,7 @@ h2 {
     margin: 1rem 0;
     padding: 1rem;
     border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 a {
@@ -741,7 +742,7 @@ body.dark-mode #projects {
 body.dark-mode .project {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
-    border-color: #444444;
+    border-color: #e6e6e6;
 }
 
 body.dark-mode #testimonials {
