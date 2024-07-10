@@ -703,7 +703,7 @@ body.light-mode #problem-code {
 }
 
 body.light-mode #actual-problem-code {
-    color: black;
+    color: var(--text-color-light);
     background-color: var(--snippet-bg-color-light);
 }
 
@@ -805,6 +805,8 @@ body.dark-mode #solution-code {
     color: var(--snippet-text-color-dark);
     background-color: black;
 }
+
+
 
 
 

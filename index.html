@@ -568,9 +568,13 @@
         }
 
         const codeSnippets = {
-            'problem-code-1': `Ensuring that all form fields are filled out and validated properly before allowing an image to be uploaded to the Gallery. 
-This includes checking if the fields are empty, ensuring positive values, and handling maximum allowed values.`,
-            'solution-code-1': `
+            'problem-code-1': {
+                title: 'Gallery Form Validation for Image Upload',
+                code: `Ensure that all form fields are filled out and validated properly before allowing an image to be uploaded to the Gallery. 
+This includes checking if the fields are empty, ensuring positive values, and handling maximum allowed values.`
+            },
+            'solution-code-1': {
+                code: `
 const isFormValid = () => {
     if (!image) {
         setUploadError("No image file selected.");
@@ -640,12 +644,23 @@ const isFormValid = () => {
 
     return true;
 };
-`,
-            'problem-code-2': `// Input problem code 2 here...`,
-            'solution-code-2': `// Input solution code 2 here...`,
-            'problem-code-3': `// Input problem code 3 here...`,
-            'solution-code-3': `// Input solution code 3 here...`
-        }
+`
+            },
+            'problem-code-2': {
+                title: 'User Inactivity and Auto Logout',
+                code: `// Input problem code 2 here...`
+            },
+            'solution-code-2': {
+                code: `// Input solution code 2 here...`
+            },
+            'problem-code-3': {
+                title: 'Placeholder Title for Problem 3',
+                code: `// Input problem code 3 here...`
+            },
+            'solution-code-3': {
+                code: `// Input solution code 3 here...`
+            }
+        };
 
 
         function toggleCodeSnippet(problemId, solutionId) {
@@ -655,10 +670,10 @@ const isFormValid = () => {
             const problemHeader = document.querySelector('#code-snippets-container .code-block:nth-child(1) h4');
             const solutionHeader = document.querySelector('#code-snippets-container .code-block:nth-child(2) h4');
 
-            if (container.style.display === 'none' || problemCode.textContent !== codeSnippets[problemId]) {
-                problemCode.textContent = codeSnippets[problemId];
-                solutionCode.textContent = codeSnippets[solutionId];
-                problemHeader.textContent = `Problem ${problemId.split('-')[2]}:`;
+            if (container.style.display === 'none' || problemCode.textContent !== codeSnippets[problemId].code) {
+                problemCode.textContent = codeSnippets[problemId].code;
+                solutionCode.textContent = codeSnippets[solutionId].code;
+                problemHeader.textContent = `Problem ${problemId.split('-')[2]}: ${codeSnippets[problemId].title}`;
                 solutionHeader.textContent = `Solution Code ${solutionId.split('-')[2]}:`;
                 container.style.display = 'block';
             } else {
