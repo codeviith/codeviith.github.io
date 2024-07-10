@@ -100,6 +100,10 @@ a:hover {
     --button-text-dark: #ffffff;
     --link-color-light: darkblue;
     --link-color-dark: rgb(4, 224, 240);
+    --snippet-bg-color-light: #ececec;
+    --snippet-text-color-light: #000000;
+    --snippet-bg-color-dark: #1b1b1b;
+    --snippet-text-color-dark: #ebebeb;
 }
 
 
@@ -382,11 +386,12 @@ body {
     flex-direction: column;
     gap: 20px;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 .code-block {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    background-color: inherit;
+    border: 1.5px solid #898888;
     border-radius: 5px;
     padding: 10px;
     overflow-x: auto;
@@ -603,6 +608,8 @@ html {
 body.light-mode {
     background-color: var(--bg-color-light);
     color: var(--text-color-light);
+    --timeline-mark-color: #333;
+    --timeline-line-color: #333;
 }
 
 body.light-mode h2 {
@@ -615,11 +622,6 @@ body.light-mode .progress-bar {
 
 body.light-mode .progress {
     color: #000000;
-}
-
-body.light-mode {
-    --timeline-mark-color: #333;
-    --timeline-line-color: #333;
 }
 
 body.light-mode #projects {
@@ -676,10 +678,22 @@ body.light-mode .toc nav ul li a {
     color: var(--toc-text-color-light);
 }
 
+body.light-mode .code-snippets {
+    background-color: var(--snippet-bg-color-light);
+    color: var(--snippet-text-color-light);
+}
+
+body.light-mode .code-snippets code {
+    color: var(--snippet-text-color-light)
+}
+
+
 /* Dark mode styles */
 body.dark-mode {
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
+    --timeline-mark-color: #fff;
+    --timeline-line-color: #fff;
 }
 
 body.dark-mode h2 {
@@ -692,11 +706,6 @@ body.dark-mode .progress-bar {
 
 body.dark-mode .progress {
     color: #ffffff;
-}
-
-body.dark-mode {
-    --timeline-mark-color: #fff;
-    --timeline-line-color: #fff;
 }
 
 body.dark-mode #projects {
@@ -752,6 +761,16 @@ body.dark-mode .toc {
 body.dark-mode .toc nav ul li a {
     color: var(--toc-text-color-dark);
 }
+
+body.dark-mode .code-snippets {
+    background-color: var(--snippet-bg-color-dark);
+    color: var(--snippet-text-color-dark);
+}
+
+body.dark-mode .code-snippets code {
+    color: var(--snippet-text-color-dark);
+}
+
 
 
 
