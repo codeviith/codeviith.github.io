@@ -603,7 +603,6 @@ html {
 
 
 
-
 /* Light mode styles */
 body.light-mode {
     background-color: var(--bg-color-light);
@@ -683,9 +682,34 @@ body.light-mode .code-snippets {
     color: var(--snippet-text-color-light);
 }
 
-body.light-mode .code-snippets code {
-    color: var(--snippet-text-color-light)
+body.light-mode .code-block code {
+    color: var(--snippet-text-color-dark);
+    background-color: var(--snippet-bg-color-dark);
 }
+
+body.light-mode .code-snippets code {
+    color: var(--snippet-text-color-dark);
+    background-color: var(--bg-color-dark);
+}
+
+body.light-mode #solution-code {
+    color: var(--snippet-text-color-dark);
+    background-color: var(--bg-color-dark);
+}
+
+body.light-mode #problem-code {
+    color: var(--snippet-text-color-dark);
+    background-color: var(--snippet-bg-color-light);
+}
+
+body.light-mode #actual-problem-code {
+    color: black;
+    background-color: var(--snippet-bg-color-light);
+}
+
+
+
+
 
 
 /* Dark mode styles */
@@ -763,16 +787,24 @@ body.dark-mode .toc nav ul li a {
 }
 
 body.dark-mode .code-snippets {
-    background-color: var(--snippet-bg-color-dark);
+    background-color: black;
     color: var(--snippet-text-color-dark);
+}
+
+body.dark-mode .code-block code {
+    color: var(--snippet-text-color-dark);
+    background-color: black;
 }
 
 body.dark-mode .code-snippets code {
     color: var(--snippet-text-color-dark);
+    background-color: black;
 }
 
-
-
+body.dark-mode #solution-code {
+    color: var(--snippet-text-color-dark);
+    background-color: black;
+}
 
 
 
