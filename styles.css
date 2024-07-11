@@ -388,6 +388,7 @@ body {
     gap: 20px;
     margin-top: 20px;
     border-radius: 5px;
+    font-size: 18px;
 }
 
 .code-block {
@@ -416,6 +417,10 @@ code {
     display: flex;
     justify-content: space-evenly;
     margin-top: 10px;
+}
+
+#actual-problem-code {
+    font-size: 20px;
 }
 
 
