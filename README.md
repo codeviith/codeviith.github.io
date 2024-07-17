@@ -1,80 +1,54 @@
-# Kevin Lin's Portfolio
+# Kevin Lin's Portfolio Hub
 
-Welcome to my professional portfolio website! This repository contains the source code for my personal portfolio, showcasing my skills, projects, and experience as a Software Engineer and Frontend Developer.
-
-## Live Demo
-
-You can visit my portfolio <a href="https://codeviith.github.io/" target="_blank">here</a>.
-<!-- You can visit my portfolio [here](https://codeviith.github.io/). -->
+Welcome to Kevin Lin's Portfolio Hub. This main page serves as a gateway to multiple portfolios, each showcasing different aspects of my skills and expertise.
 
 ## Table of Contents
 
-- [About](#about)
+- [Overview](#overview)
+- [Portfolios](#portfolios)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Contact](#contact)
+- [Usage](#usage)
 - [License](#license)
+- [Credits](#credits)
 
-## About
+## Overview
 
-I am a versatile and driven software engineer with a passion for developing innovative solutions and seeing
-projects through from inception to completion. My recent project "DIYeSk8Guide", a full-stack web
-application, highlights my commitment to empowering individuals to build their own electric skateboards.
-This project showcases my technical proficiency, dedication to hands-on creation, and problem-solving
-abilities.
+Kevin Lin's Portfolio Hub provides a user-friendly interface for selecting and accessing various portfolios. Each portfolio highlights a different set of skills and projects, allowing for a comprehensive view of my professional capabilities.
 
-With over two years of experience in web development and design, I possess a robust technical mindset
-and excel in the design, implementation, and verification of components. I effectively translate both
-functional and technical requirements into comprehensive architectures, optimizing software and website
-designs to enhance scalability, reliability, and performance.
+## Portfolios
 
-As a graduate with a background in both software engineering and podiatric medicine, I bring a unique blend
-of technical and mechanical expertise. My experience in technical undertakings has equipped me with the
-ability to contribute to innovative solutions. I am passionate about web and software development and I am
-eager to collaborate with teams to create meaningful projects. Committed to applying my skills and knowledge, 
-I aim to support and enhance the work of my future colleagues and organization by building applications that
-make a significant impact.
+Currently available portfolios:
+- **Software Development Portfolio**: Showcasing projects and skills in software engineering and web development.
+- **CAD Designer/Drafter Portfolio**: Highlighting expertise in CAD design and 3D modeling.
+
+More portfolios may be added in the future as I continue to expand my skill set and professional experiences.
 
 ## Features
 
-- **Responsive Design**: Accessible on all devices
-- **Interactive UI**: Smooth and engaging user interface
-- **Project Showcase**: Detailed information on my projects
-- **Skills**: Comprehensive overview of my technical and soft skills
-- **Certifications**: List of my educational qualifications and certifications
-- **Achievements**: Highlights of my professional accomplishments
-- **GitHub Contributions**: Visual representation of my GitHub activity
-- **Recommendations & Testimonials**: Feedback and testimonials from mentors and peers
-- **Contact Info**: Integrated with reCAPTCHA for security
-
-*Note: Some sections will be updated as new information becomes available.*
+- User-friendly interface with a dropdown menu for selecting the desired portfolio.
+- Centralized access to multiple portfolios.
+- Clean and professional design.
+- Responsive layout for both desktop and mobile devices.
 
 ## Technologies Used
 
-For this portfolio:
+- HTML5
+- CSS3
+- JavaScript
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Deployment**: GitHub Pages
+## Usage
 
-For my projects:
-
-- **Frontend**: JavaScript, React.js, React-Native.js, Redux.js, Tailwind, HTML/CSS
-- **Backend**: Node.js, Python, Flask
-- **Database**: SQLite, SQLAlchemy, PostgreSQL
-- **Deployment**: Render, AWS (S3, EC2, RDS), Firebase
-- **Other Tools**: Git, GitHub, VS Code, Bcrypt, Cron-job.
-
-## Contact
-
-Feel free to reach out to me via the contact form on my portfolio website or through the following channels:
-
-- **LinkedIn**: [Kevin Lin](https://www.linkedin.com/in/kevinlin128/)
-- **GitHub**: [codeviith](https://github.com/codeviith)
-- **Blog**: [Hashnode](https://hashnode.com/@codeviith)
+1. Visit the Portfolio Hub page hosted at [https://codeviith.github.io/](https://codeviith.github.io/).
+2. Use the dropdown menu to select the portfolio you wish to view.
+3. Click the "Go" button to be redirected to the selected portfolio.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Credits
+- Designed and developed by Kevin Lin.
+- Inspired by the need to showcase diverse skills in a streamlined and professional manner.
+
 &copy; 2024 Kevin Lin. All rights reserved.
