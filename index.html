@@ -4,24 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Lin's Portfolio Selector</title>
+    <title>Kevin Lin's Portfolio Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
         <h1>Welcome to Kevin Lin's Portfolio Hub</h1>
-        <p>I am a versatile professional with expertise in both Software Engineering and CAD Design. Depending on your
-            interest, you can explore my work in either field. I believe my diverse skill set enables me to bring unique
-            perspectives and innovative solutions to various roles.</p>
+        <p>I am a versatile professional with expertise in multiple fields. Depending on your interest, you can explore
+            my work in various areas. I believe my diverse skill set enables me to bring unique perspectives and
+            innovative solutions to different roles.</p>
         <p>Please select the portfolio that aligns with your interests:</p>
-
-        <select id="portfolio-select">
-            <option value="" disabled selected>Select a Portfolio</option>
-            <option value="software">Software Development</option>
-            <option value="cad">CAD Designer/Drafter</option>
-        </select>
-        <button onclick="redirectToPortfolio()">Go</button>
+        <div class="select-container">
+            <select id="portfolio-select">
+                <option value="" disabled selected>Select a Portfolio</option>
+                <option value="software">Software Development</option>
+                <!-- <option value="cad">CAD Designer/Drafter</option> -->
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="button-container">
+            <button onclick="redirectToPortfolio()">Go</button>
+        </div>
     </div>
 
     <script>
@@ -32,6 +36,7 @@
             } else if (selection === 'cad') {
                 window.location.href = 'https://codeviith.github.io/cad/';
             }
+            // Add more conditions as needed for additional portfolios
         }
     </script>
 </body>
